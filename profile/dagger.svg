@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Blue dagger</title>
+  <defs>
+    <linearGradient id="bladeLight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0F9FF"/>
+      <stop offset="0.45" stop-color="#93D2FF"/>
+      <stop offset="1" stop-color="#3B8BFF"/>
+    </linearGradient>
+    <linearGradient id="bladeDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7CB8FF"/>
+      <stop offset="0.5" stop-color="#2F6FE8"/>
+      <stop offset="1" stop-color="#1A3FA8"/>
+    </linearGradient>
+    <linearGradient id="guard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7DD3FC"/>
+      <stop offset="0.5" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1E3A8A"/>
+      <stop offset="0.45" stop-color="#14286B"/>
+      <stop offset="1" stop-color="#0A1640"/>
+    </linearGradient>
+    <radialGradient id="gem" cx="0.38" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.25" stop-color="#7DE3FF"/>
+      <stop offset="0.7" stop-color="#0EA5E9"/>
+      <stop offset="1" stop-color="#0B4FB3"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- soft blue aura behind the blade -->
+  <circle cx="256" cy="256" r="230" fill="url(#glow)"/>
+
+  <g transform="translate(256 256) rotate(45) scale(1.12) translate(-256 -250)"
+     stroke="#0A1A3F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+
+    <!-- blade: light bevel (left) + dark bevel (right) -->
+    <path d="M256 36 C251 92 228 196 226 298 L256 298 Z" fill="url(#bladeLight)" stroke="none"/>
+    <path d="M256 36 C261 92 284 196 286 298 L256 298 Z" fill="url(#bladeDark)" stroke="none"/>
+    <path d="M256 36 C251 92 228 196 226 298 L286 298 C284 196 261 92 256 36 Z" fill="none"/>
+    <!-- center ridge + fuller -->
+    <path d="M256 70 L256 286" stroke="#DBEEFF" stroke-width="3" stroke-opacity="0.9"/>
+    <path d="M262 130 L262 284" stroke="#123A9C" stroke-width="4" stroke-opacity="0.55"/>
+    <!-- edge glint -->
+    <path d="M246 96 C240 150 234 210 233 270" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.75" fill="none"/>
+
+    <!-- crossguard with curled tips -->
+    <path d="M160 292 C166 280 184 284 190 296 L322 296 C328 284 346 280 352 292
+             C358 306 346 324 330 322 L182 322 C166 324 154 306 160 292 Z" fill="url(#guard)"/>
+    <circle cx="256" cy="309" r="11" fill="url(#gem)" stroke-width="4"/>
+
+    <!-- grip with leather wrap -->
+    <rect x="238" y="322" width="36" height="100" rx="8" fill="url(#grip)"/>
+    <g stroke="#3B6FE0" stroke-width="4" stroke-opacity="0.85">
+      <path d="M241 340 L271 330"/>
+      <path d="M241 360 L271 350"/>
+      <path d="M241 380 L271 370"/>
+      <path d="M241 400 L271 390"/>
+      <path d="M241 418 L271 408"/>
+    </g>
+    <rect x="238" y="322" width="36" height="100" rx="8" fill="none"/>
+
+    <!-- pommel -->
+    <path d="M232 424 L280 424 L274 436 L238 436 Z" fill="url(#guard)" stroke-width="5"/>
+    <circle cx="256" cy="456" r="22" fill="url(#gem)"/>
+    <circle cx="249" cy="449" r="5" fill="#FFFFFF" stroke="none" opacity="0.9"/>
+  </g>
+
+  <!-- glint centered on the blade tip (tip lands at ~425,87 after the transform) -->
+  <path d="M425 61 L430 82 L451 87 L430 92 L425 113 L420 92 L399 87 L420 82 Z"
+        fill="#E0F2FF" stroke="#60A5FA" stroke-width="2" stroke-linejoin="round"/>
+</svg>
